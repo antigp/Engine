@@ -140,9 +140,9 @@ open class HostingController<
                     if #available(iOS 18.1, tvOS 18.1, *) {
                         var allowUIKitAnimations = try swift_getFieldValue("allowUIKitAnimations", Int32.self, hostingView)
                         allowUIKitAnimations += 1
-                        try swift_setFieldValue("allowUIKitAnimations", allowUIKitAnimations, hostingView)
+                        try swift_setFieldValue("allowUIKitAnimations", allowUIKitAnimations, hostingView as AnyObject)
                     } else {
-                        try swift_setFieldValue("allowUIKitAnimationsForNextUpdate", true, hostingView)
+                        try swift_setFieldValue("allowUIKitAnimationsForNextUpdate", true, hostingView as AnyObject)
                     }
                 } catch {
                     print("Failed to allow UIKit animations, this is unexpected please file an issue =")
